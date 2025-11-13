@@ -1,0 +1,23 @@
+{
+    "collection": "users",
+    "fields": {
+        "username": {
+            "type": "string",
+            "required": true,
+            "unique": true
+        },
+        "password": {
+            "type": "string",
+            "required": true
+        },
+        "created_at": {
+            "type": "date",
+            "default": "current_timestamp"
+        }
+    },
+    "sample_document": {
+        "username": "user123",
+        "password": "hashedPassword123",
+        "created_at": "2025-10-26T00:00:00.000Z"
+    }
+}

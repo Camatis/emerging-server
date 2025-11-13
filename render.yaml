@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: emerging-server
+    env: node
+    region: oregon
+    plan: free
+    repo: https://github.com/Camatis/emerging-server.git
+    branch: main
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: MONGODB_URI
+        # Set this on Render dashboard or use value: mongodb+srv://user:pass@cluster.mongodb.net/db
+        value: ""
+      - key: PORT
+        value: "5000"
+      - key: JWT_SECRET
+        value: "changeme-use-strong-secret"
+      - key: JWT_EXPIRES_IN
+        value: "24h"
+      - key: ALLOWED_ORIGINS
+        value: "https://emerging-web.onrender.com"
+      - key: NODE_ENV
+        value: "production"
+      - key: ADMIN_USERNAME
+        value: "admin"
+      - key: ADMIN_PASSWORD
+        value: "emtech"
